@@ -5,6 +5,9 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import "./index.css";
+import { ThemeProvider } from "styled-components";
+import theme from "./theme";
+
 import reportWebVitals from "./reportWebVitals";
 
 import Main from "./containers";
@@ -12,7 +15,9 @@ import Main from "./containers";
 render(
   <StrictMode>
     <Provider store={store}>
-      <Main />
+      <ThemeProvider theme={theme}>
+        <Main />
+      </ThemeProvider>
     </Provider>
   </StrictMode>,
   document.getElementById("root")
