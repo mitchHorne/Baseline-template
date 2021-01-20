@@ -1,9 +1,6 @@
-import Button from "../components/Button";
-
 const Main = () => (
   <div>
-    <h1>Base</h1>
-    <Button>My awesome text</Button>
+    <h1>Start</h1>
   </div>
 );
 
