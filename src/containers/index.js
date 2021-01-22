@@ -1,7 +1,9 @@
+import { Fragment } from "react";
+
 const Main = () => (
-  <div>
-    <h1>Start</h1>
-  </div>
+  <Fragment>
+    <h1>Placeholder</h1>
+  </Fragment>
 );
 
 export default Main;
