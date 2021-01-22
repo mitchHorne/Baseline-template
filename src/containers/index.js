@@ -1,10 +1,8 @@
 import { Fragment } from "react";
 
-import Button from "../components/Button";
-
 const Main = () => (
   <Fragment>
-    <Button>things</Button>
+    <h1>things</h1>
   </Fragment>
 );
 
