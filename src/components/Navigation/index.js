@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-import Container from "../Container";
+import Container from "../Containers/Main";
 import Icon from "../Icon";
 import logoSrc from "../../constants/logo.png";
 

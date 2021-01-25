@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Field } from "react-final-form";
 
-import Container from "../../Container";
+import Container from "../../Containers/Main";
 import FieldError from "./Error";
 
 const FieldContainer = styled(Container)`
