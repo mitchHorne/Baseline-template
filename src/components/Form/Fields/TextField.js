@@ -23,7 +23,7 @@ const FieldInput = styled.input`
   }
 `;
 
-export default ({ name, label }) => (
+export default ({ name, label, type = "text" }) => (
   <Field name={name}>
     {({ input, meta }) => {
       const hasError = meta.error && meta.touched;
@@ -35,7 +35,7 @@ export default ({ name, label }) => (
             {...input}
             error={hasError}
             placeholder={label}
-            type="text"
+            type={type}
           />
           {hasError && <FieldError>{meta.error}</FieldError>}
         </Container>
