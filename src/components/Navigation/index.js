@@ -7,12 +7,15 @@ import logoSrc from "../../constants/logo.png";
 
 const Navbar = styled(Container)`
   align-items: center;
-  box-shadow: 1px 1px 15px #333;
+  background: ${props => props.theme.colors.navBackground};
+  color: ${props => props.theme.colors.nav};
   left: 0;
-  padding: 0 1em;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 999;
+
+  ${props => props.theme.styling.boxShadow};
 
   @media only screen and (min-width: 1024px) {
     justify-content: flex-start;
@@ -55,6 +58,11 @@ const DesktopLinkContainer = styled(Container)`
   }
 `;
 
+const DesktopLinkRightContainer = styled(DesktopLinkContainer)`
+  position: absolute;
+  right: 1em;
+`;
+
 const MobileLinkContainer = styled(Container)`
   background: ${props => props.theme.colors.primaryBackground};
   flex-direction: column;
@@ -72,7 +80,6 @@ const MobileLinkContainer = styled(Container)`
 `;
 
 const Link = styled.a`
-  color: ${props => props.theme.colors.primary};
   padding: 1em 0.5em;
   text-decoration: none;
 
@@ -82,18 +89,26 @@ const Link = styled.a`
   }
 `;
 
-const renderLinks = () => {
-  const links = [
+const renderLinks = links =>
+  links.map(({ anchor, text }) => (
+    <Link href={anchor} key={`NAV_LINK_${text}`}>
+      {text}
+    </Link>
+  ));
+
+export default () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const leftLinks = [
     { anchor: "#", text: "Link 1" },
     { anchor: "#", text: "Link 2" },
     { anchor: "#", text: "Link 3" },
   ];
 
-  return links.map(({ anchor, text }) => <Link href={anchor}>{text}</Link>);
-};
-
-export default () => {
-  const [isOpen, setOpen] = useState(false);
+  const rightLinks = [
+    { anchor: "#", text: "Link 4" },
+    { anchor: "#", text: "Link 5" },
+  ];
 
   return (
     <Navbar>
@@ -101,8 +116,13 @@ export default () => {
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
       <Logo src={logoSrc} />
-      <DesktopLinkContainer>{renderLinks()}</DesktopLinkContainer>
-      <MobileLinkContainer isOpen={isOpen}>{renderLinks()}</MobileLinkContainer>
+      <DesktopLinkContainer>{renderLinks(leftLinks)}</DesktopLinkContainer>
+      <DesktopLinkRightContainer>
+        {renderLinks(rightLinks)}
+      </DesktopLinkRightContainer>
+      <MobileLinkContainer isOpen={isOpen}>
+        {renderLinks([...leftLinks, ...rightLinks])}
+      </MobileLinkContainer>
     </Navbar>
   );
 };
