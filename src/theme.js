@@ -1,7 +1,7 @@
 export default {
   colors: {
-    accent: "#fff",
-    accentBackground: "#3b5998 ",
+    button: "#fff",
+    buttonBackground: "#3b5998 ",
     error: "#ff0033",
     nav: "#333",
     navBackground: "#fff",
