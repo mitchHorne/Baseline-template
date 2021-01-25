@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import { Field } from "react-final-form";
 
-import Container from "../../Containers/Main";
+import Container from "./Contaienr";
 import FieldError from "./Error";
-
-const FieldContainer = styled(Container)`
-  flex-direction: column;
-`;
 
 const FieldInput = styled.input`
   border: 1px solid ${props => props.theme.colors.primary};
@@ -33,7 +29,7 @@ export default ({ name, label }) => (
       const hasError = meta.error && meta.touched;
 
       return (
-        <FieldContainer>
+        <Container>
           <label>{label}</label>
           <FieldInput
             {...input}
@@ -42,7 +38,7 @@ export default ({ name, label }) => (
             type="text"
           />
           {hasError && <FieldError>{meta.error}</FieldError>}
-        </FieldContainer>
+        </Container>
       );
     }}
   </Field>
