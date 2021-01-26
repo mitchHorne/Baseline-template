@@ -2,6 +2,7 @@ export default {
   colors: {
     button: "#fff",
     buttonBackground: "#3b5998 ",
+    buttonDisabledBackground: "#999",
     error: "#ff0033",
     nav: "#333",
     navBackground: "#fff",
