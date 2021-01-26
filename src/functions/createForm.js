@@ -11,27 +11,39 @@
 // };
 
 // const FormComponents = ({ errors, touched }) => {
-//   const checkboxOptions = [
-//     { name: "sauces", label: "Ketchup" },
-//     { name: "sauces", label: "Mustard" },
-//     { name: "sauces", label: "BBQ" },
-//     { name: "sauces", label: "Mayo" },
-//   ];
+//     const checkboxOptions = [
+//       { name: "sauces", label: "Ketchup" },
+//       { name: "sauces", label: "Mustard" },
+//       { name: "sauces", label: "BBQ" },
+//       { name: "sauces", label: "Mayo" },
+//     ];
 
-//   return (
-//     <Fragment>
-//       <TextField name="name" label="Name" />
-//       <TextField name="surname" label="Surname" />
-//       <TextField name="price" label="Price" type="number" />
-//       <SelectionGroup
-//         error={errors.sauces}
-//         options={checkboxOptions}
-//         touched={touched.sauces}
-//         type="checkbox"
-//       />
-//     </Fragment>
-//   );
-// };
+//     const radioOptions = [
+//       { name: "delivery", label: "At door" },
+//       { name: "delivery", label: "At gate" },
+//       { name: "delivery", label: "Pick up" },
+//     ];
+
+//     return (
+//       <Fragment>
+//         <TextField name="name" label="Name" />
+//         <TextField name="surname" label="Surname" />
+//         <TextField name="price" label="Price" type="number" />
+//         <SelectionGroup
+//           error={errors.sauces}
+//           options={checkboxOptions}
+//           touched={touched.sauces}
+//           type="checkbox"
+//         />
+//         <SelectionGroup
+//           error={errors.delivery}
+//           options={radioOptions}
+//           touched={touched.delivery}
+//           type="radio"
+//         />
+//       </Fragment>
+//     );
+//   };
 
 // <Form
 // FormComponents={FormComponents}
