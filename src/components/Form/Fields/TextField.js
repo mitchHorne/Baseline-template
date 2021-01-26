@@ -20,6 +20,17 @@ const FieldInput = styled.input`
     ${props =>
       props.error ? `border-color: ${props.theme.colors.error}; ` : ""}
   }
+
+  /* Removes input type number arrows */
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  [type="number"] {
+    -moz-appearance: textfield;
+  }
 `;
 
 export default ({ name, label, type = "text" }) => (
