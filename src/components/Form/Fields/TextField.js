@@ -5,8 +5,9 @@ import Container from "./Contaienr";
 import Error from "./Error";
 
 const FieldInput = styled.input`
-  border: 1px solid ${props => props.theme.colors.primary};
-  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid ${props => props.theme.colors.primary};
+  margin-top: 0.5em;
   padding: 0.25em;
   transition: 0.3s all;
   width: 10em;
@@ -17,9 +18,7 @@ const FieldInput = styled.input`
     outline: 0;
 
     ${props =>
-      props.error
-        ? `border-color: ${props.theme.colors.error}; box-shadow: 0 0 5px ${props.theme.colors.error};`
-        : `box-shadow: 0 0 5px ${props.theme.colors.primary};`}
+      props.error ? `border-color: ${props.theme.colors.error}; ` : ""}
   }
 `;
 
