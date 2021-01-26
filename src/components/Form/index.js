@@ -8,8 +8,14 @@ const StyledForm = styled.form`
   flex-direction: column;
 `;
 
-export default ({ FormComponents, onSubmit, validate = () => true }) => (
+export default ({
+  FormComponents,
+  initialValues = {},
+  onSubmit,
+  validate = () => true,
+}) => (
   <Form
+    initialValues={initialValues}
     onSubmit={onSubmit}
     validate={validate}
     render={({ errors, handleSubmit, pristine, submitting, touched }) => (
