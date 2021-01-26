@@ -10,13 +10,13 @@ import theme from "./theme";
 
 import reportWebVitals from "./reportWebVitals";
 
-import Main from "./containers";
+import Routes from "./routes";
 
 render(
   <StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <Main />
+        <Routes />
       </ThemeProvider>
     </Provider>
   </StrictMode>,
