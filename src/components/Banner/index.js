@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
+import Cover from "./Cover";
+
 const BannerContainer = styled.div`
   background-clip: padding-box;
   background-image: url(${props => props.backgroundSrc});
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 4em);
-  padding: 2em;
-  width: 100%;
+  height: ${props => (props.fill ? "100vh" : "65vh")};
+  position: relative;
 `;
 
-export default ({ src }) => <BannerContainer backgroundSrc={src} />;
+const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+export default ({ fill, src }) => (
+  <BannerContainer backgroundSrc={src} fill={fill}>
+    <Cover fill={fill} text={text} />
+  </BannerContainer>
+);

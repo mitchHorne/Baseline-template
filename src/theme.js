@@ -1,6 +1,8 @@
 export default {
   colors: {
     accent: "#008080",
+    banner: "#fff",
+    bannerBackground: "#222c",
     button: "#fff",
     buttonBackground: "#3b5998 ",
     buttonDisabledBackground: "#999",
