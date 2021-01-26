@@ -5,26 +5,36 @@
 //   if (!values.name) errors.name = "Required";
 //   if (!values.surname) errors.surname = "Required";
 //   if (!values.price) errors.price = "Required";
+//   if (!values.sauces?.length) errors.sauces = "Select at least 1";
 
 //   return errors;
 // };
 
-// const FormComponents = () => (
+// const FormComponents = ({ errors, touched }) => {
+//   const checkboxOptions = [
+//     { name: "sauces", label: "Ketchup" },
+//     { name: "sauces", label: "Mustard" },
+//     { name: "sauces", label: "BBQ" },
+//     { name: "sauces", label: "Mayo" },
+//   ];
+
+//   return (
 //     <Fragment>
 //       <TextField name="name" label="Name" />
 //       <TextField name="surname" label="Surname" />
 //       <TextField name="price" label="Price" type="number" />
-//       <Checkbox name="sauces" label="Ketchup" />
-//       <Checkbox name="sauces" label="Mustard" />
-//       <Checkbox name="sauces" label="BBQ" />
-//       <Checkbox name="sauces" label="Mayo" />
-//       <Button type="submit">Submit</Button>
+//       <SelectionGroup
+//         error={errors.sauces}
+//         options={checkboxOptions}
+//         touched={touched.sauces}
+//         type="checkbox"
+//       />
 //     </Fragment>
 //   );
+// };
 
-{
-  /* <Form
-  FormComponents={FormComponents}
-  onSubmit={values => console.log(values)}
-/>; */
-}
+// <Form
+// FormComponents={FormComponents}
+// onSubmit={values => console.log(values)}
+// validate={validate}
+// />
