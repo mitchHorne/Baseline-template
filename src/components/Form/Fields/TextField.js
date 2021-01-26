@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Field } from "react-final-form";
 
 import Container from "./Contaienr";
-import FieldError from "./Error";
+import Error from "./Error";
 
 const FieldInput = styled.input`
   border: 1px solid ${props => props.theme.colors.primary};
@@ -37,7 +37,7 @@ export default ({ name, label, type = "text" }) => (
             placeholder={label}
             type={type}
           />
-          {hasError && <FieldError>{meta.error}</FieldError>}
+          {hasError && <Error>{meta.error}</Error>}
         </Container>
       );
     }}
