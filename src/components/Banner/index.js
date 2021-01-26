@@ -11,10 +11,8 @@ const BannerContainer = styled.div`
   position: relative;
 `;
 
-const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-
-export default ({ fill, src }) => (
+export default ({ fill, left, src, text }) => (
   <BannerContainer backgroundSrc={src} fill={fill}>
-    <Cover fill={fill} text={text} />
+    {text && <Cover fill={fill} left={left} text={text} />}
   </BannerContainer>
 );
