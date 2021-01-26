@@ -80,11 +80,11 @@ const MobileLinkContainer = styled(Container)`
 `;
 
 const Link = styled.a`
+  color: ${props => props.theme.colors.nav};
   padding: 1em 0.5em;
   text-decoration: none;
 
   :hover {
-    background: ${props => props.theme.colors.accentBackground};
     color: ${props => props.theme.colors.accent};
   }
 `;
