@@ -1,15 +1,5 @@
 // Example of creating a form
 
-// const validate = values => {
-//   const errors = {};
-//   if (!values.name) errors.name = "Required";
-//   if (!values.surname) errors.surname = "Required";
-//   if (!values.price) errors.price = "Required";
-//   if (!values.sauces?.length) errors.sauces = "Select at least 1";
-
-//   return errors;
-// };
-
 // const FormComponents = ({ errors, touched }) => {
 //     const checkboxOptions = [
 //       { name: "sauces", label: "Ketchup" },
@@ -45,8 +35,27 @@
 //     );
 //   };
 
+// const initialValues = {
+//     name: "mitch",
+//     surname: "",
+//     price: "1250",
+//     sauces: [],
+//     delivery: "At door",
+//   };
+
+// const validate = values => {
+//   const errors = {};
+//   if (!values.name) errors.name = "Required";
+//   if (!values.surname) errors.surname = "Required";
+//   if (!values.price) errors.price = "Required";
+//   if (!values.sauces?.length) errors.sauces = "Select at least 1";
+
+//   return errors;
+// };
+
 // <Form
-// FormComponents={FormComponents}
-// onSubmit={values => console.log(values)}
-// validate={validate}
+//  FormComponents={FormComponents}
+//   initialValues={initialValues}
+//  onSubmit={values => console.log(values)}
+//  validate={validate}
 // />
