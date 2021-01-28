@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import Container from "../Containers/Main";
-import Button from "../Button";
+import Link from "../Button/Link";
 
 const Cover = styled(Container)`
   align-items: center;
@@ -32,12 +32,12 @@ const CoberButtonContainer = styled(Container)`
   width: 100%;
 
   ${props => props.theme.media.tablet} {
-    flex-direction: row;
+    flex-direction: ${props => (props.length > 2 ? "column" : "row")};
     justify-content: space-around;
   }
 `;
 
-const CoverButton = styled(Button)`
+const CoverButton = styled(Link)`
   background-color: ${props => props.theme.colors.bannerAccentBackground};
   color: ${props => props.theme.colors.bannerAccent};
   font-size: 0.75em;
@@ -50,12 +50,20 @@ const CoverButton = styled(Button)`
   }
 `;
 
-export default ({ left, fill, text }) => (
+const renderButtons = buttons =>
+  buttons.map(({ href, text }, index) => (
+    <CoverButton key={`COVER_BUTTON_#${index}`} href={href}>
+      {text}
+    </CoverButton>
+  ));
+
+export default ({ buttons, left, fill, text }) => (
   <Cover fill={fill} left={left}>
     {text}
-    <CoberButtonContainer>
-      <CoverButton>Get Quote</CoverButton>
-      <CoverButton>Get Other</CoverButton>
-    </CoberButtonContainer>
+    {buttons?.length && (
+      <CoberButtonContainer length={buttons.length}>
+        {renderButtons(buttons)}
+      </CoberButtonContainer>
+    )}
   </Cover>
 );

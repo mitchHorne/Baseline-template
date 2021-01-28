@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.button`
+export default styled.a`
   background: ${props =>
     props.disabled
       ? props.theme.colors.buttonDisabledBackground
@@ -9,6 +9,7 @@ export default styled.button`
   border-radius: 10px;
   color: ${props => props.theme.colors.button};
   padding: 0.5em;
+  text-decoration: none;
 
   :hover {
     cursor: ${props => (props.disabled ? "not-allowed" : "pointer")};

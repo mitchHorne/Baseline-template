@@ -15,8 +15,10 @@ const BannerContainer = styled.div`
   }
 `;
 
-export default ({ fill, left, src, text }) => (
+export default ({ buttons, fill, left, src, text }) => (
   <BannerContainer backgroundSrc={src} fill={fill}>
-    {text && <Cover fill={fill} left={left} text={text} />}
+    {(buttons || text) && (
+      <Cover buttons={buttons} fill={fill} left={left} text={text} />
+    )}
   </BannerContainer>
 );
