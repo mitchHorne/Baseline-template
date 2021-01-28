@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Container from "./Contaienr";
+import Container from "./Container";
 import Checkbox from "./Checkbox";
 import RadioButton from "./RadioButton";
 import Error from "./Error";
