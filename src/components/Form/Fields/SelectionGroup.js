@@ -6,7 +6,9 @@ import RadioButton from "./RadioButton";
 import Error from "./Error";
 
 const StyledContainer = styled(Container)`
+  align-items: flex-start;
   padding-bottom: 0.5em;
+  width: fit-content;
 `;
 
 const renderOptions = (options, type) => {

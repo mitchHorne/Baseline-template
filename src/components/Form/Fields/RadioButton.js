@@ -5,6 +5,7 @@ const RadioButton = styled.label`
   width: fit-content;
 
   input {
+    margin: 0;
     margin-right: 0.25em;
   }
 

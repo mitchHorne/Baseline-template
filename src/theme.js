@@ -8,6 +8,9 @@ export default {
     buttonBackground: "#3b5998 ",
     buttonDisabledBackground: "#999",
     error: "#ff0033",
+    form: "#333",
+    formAccent: "#008080",
+    formBackground: "#eee",
     nav: "#333",
     navBackground: "#fff",
     primary: "#333",
@@ -17,6 +20,7 @@ export default {
   },
   styling: {
     boxShadow: "box-shadow: 2px 2px 10px #333;",
+    formShadow: "box-shadow: 3px 3px 8px #333;",
     iconShadow: "box-shadow: 2px 2px 5px #333;",
   },
   media: {

@@ -4,13 +4,18 @@ import { Field } from "react-final-form";
 import Container from "./Container";
 import Error from "./Error";
 
+const FieldLabel = styled.label`
+  align-self: flex-start;
+  padding-left: 10%;
+`;
+
 const FieldInput = styled.input`
   border: 0;
   border-bottom: 1px solid ${props => props.theme.colors.primary};
   margin-top: 0.5em;
   padding: 0.25em;
   transition: 0.3s all;
-  width: 10em;
+  width: 80%;
 
   ${props => (props.error ? `border-color: ${props.theme.colors.error};` : "")}
 
@@ -33,18 +38,18 @@ const FieldInput = styled.input`
   }
 `;
 
-export default ({ name, label, type = "text" }) => (
+export default ({ name, label, text, type = "text" }) => (
   <Field name={name}>
     {({ input, meta }) => {
       const hasError = meta.error && meta.touched;
 
       return (
         <Container>
-          <label>{label}</label>
+          {label && <FieldLabel>{text}</FieldLabel>}
           <FieldInput
             {...input}
             error={hasError}
-            placeholder={label}
+            placeholder={text}
             type={type}
           />
           {hasError && <Error>{meta.error}</Error>}

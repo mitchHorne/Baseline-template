@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import Container from "../../Containers/Main";
+import Container from "../../Containers/Column";
 
 export default styled(Container)`
-  flex-direction: column;
   margin: 0.5em;
+  width: 100%;
 `;
