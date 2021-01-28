@@ -10,13 +10,13 @@ const Navbar = styled(Container)`
   align-items: center;
   background: ${props => props.theme.colors.navBackground};
   color: ${props => props.theme.colors.nav};
-  left: 0;
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 999;
 
-  ${props => props.theme.styling.boxShadow}
+  ${props =>
+    props.fixed
+      ? `left: 0;position: fixed;top: 0;${props.theme.styling.boxShadow}`
+      : ""}
 
   ${props => props.theme.media.tablet} {
     justify-content: center;
@@ -107,7 +107,7 @@ const renderLinks = links =>
     </Link>
   ));
 
-export default () => {
+export default ({ fixed }) => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
@@ -117,7 +117,7 @@ export default () => {
   ];
 
   return (
-    <Navbar>
+    <Navbar fixed={fixed}>
       <MobileNavToggle onClick={() => setOpen(!isOpen)}>
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
