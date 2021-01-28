@@ -17,8 +17,8 @@ const Navbar = styled(Container)`
 
   ${props => props.theme.styling.boxShadow};
 
-  @media only screen and (min-width: 1024px) {
-    justify-content: flex-start;
+  ${props => props.theme.media.tablet} {
+    justify-content: center;
   }
 `;
 
@@ -32,8 +32,22 @@ const MobileNavToggle = styled.button`
     outline: none;
   }
 
-  @media only screen and (min-width: 1024px) {
+  ${props => props.theme.media.tablet} {
     display: none;
+  }
+`;
+
+const DesktopContent = styled(Container)`
+  align-items: center;
+  width: 100%;
+
+  ${props => props.theme.media.desktop} {
+    max-width: 1140px;
+    ${props => (props.center ? "justify-content: space-around;" : "")}
+  }
+
+  ${props => props.theme.media.standard} {
+    max-width: 1440px;
   }
 `;
 
@@ -43,7 +57,7 @@ const Logo = styled.img`
   margin: auto;
   width: 110px;
 
-  @media only screen and (min-width: 1024px) {
+  ${props => props.theme.media.tablet} {
     margin: inherit;
   }
 `;
@@ -53,14 +67,9 @@ const DesktopLinkContainer = styled(Container)`
   display: none;
   justify-content: flex-start;
 
-  @media only screen and (min-width: 1024px) {
+  ${props => props.theme.media.tablet} {
     display: inherit;
   }
-`;
-
-const DesktopLinkRightContainer = styled(DesktopLinkContainer)`
-  position: absolute;
-  right: 1em;
 `;
 
 const MobileLinkContainer = styled(Container)`
@@ -74,7 +83,7 @@ const MobileLinkContainer = styled(Container)`
 
   ${props => (props.isOpen ? "left: 0;" : "left: -100%;")}
 
-  @media only screen and (min-width: 1024px) {
+  ${props => props.theme.media.tablet} {
     display: none;
   }
 `;
@@ -85,7 +94,7 @@ const Link = styled.a`
   text-decoration: none;
 
   :hover {
-    color: ${props => props.theme.colors.accent};
+    color: ${props => props.theme.colors.primaryAccent};
   }
 `;
 
@@ -99,15 +108,10 @@ const renderLinks = links =>
 export default () => {
   const [isOpen, setOpen] = useState(false);
 
-  const leftLinks = [
+  const links = [
     { anchor: "#", text: "Link 1" },
     { anchor: "#", text: "Link 2" },
     { anchor: "#", text: "Link 3" },
-  ];
-
-  const rightLinks = [
-    { anchor: "#", text: "Link 4" },
-    { anchor: "#", text: "Link 5" },
   ];
 
   return (
@@ -115,13 +119,12 @@ export default () => {
       <MobileNavToggle onClick={() => setOpen(!isOpen)}>
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
-      <Logo src={logoSrc} />
-      <DesktopLinkContainer>{renderLinks(leftLinks)}</DesktopLinkContainer>
-      <DesktopLinkRightContainer>
-        {renderLinks(rightLinks)}
-      </DesktopLinkRightContainer>
+      <DesktopContent>
+        <Logo src={logoSrc} />
+        <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
+      </DesktopContent>
       <MobileLinkContainer isOpen={isOpen}>
-        {renderLinks([...leftLinks, ...rightLinks])}
+        {renderLinks(links)}
       </MobileLinkContainer>
     </Navbar>
   );
