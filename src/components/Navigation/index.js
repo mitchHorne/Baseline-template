@@ -79,11 +79,18 @@ const MobileLinkContainer = styled(ColumnContainer)`
   background: ${props => props.theme.colors.primaryBackground};
   height: auto;
   position: fixed;
-  transition: 0.3s left;
+  transition: 0.3s all;
   top: 45px;
   width: 100%;
 
-  ${props => (props.isOpen ? "left: 0;" : "left: -100%;")}
+  ${props =>
+    props.isOpen
+      ? props.right
+        ? "right: 0;"
+        : "left: 0;"
+      : props.right
+      ? "right: -100%;"
+      : "left: -100%;"}
 
   ${props => props.theme.media.tablet} {
     display: none;
@@ -107,25 +114,25 @@ const renderLinks = links =>
     </Link>
   ));
 
-export default ({ fixed }) => {
+export default ({ fixed, right }) => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
-    // { anchor: "#", text: "Link 1" },
-    // { anchor: "#", text: "Link 2" },
-    // { anchor: "#", text: "Link 3" },
+    { anchor: "#", text: "Link 1" },
+    { anchor: "#", text: "Link 2" },
+    { anchor: "#", text: "Link 3" },
   ];
 
   return (
     <Navbar fixed={fixed}>
-      <MobileNavToggle onClick={() => setOpen(!isOpen)}>
+      <MobileNavToggle onClick={() => setOpen(!isOpen)} right={right}>
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
       <DesktopContent>
         <Logo src={logoSrc} />
         <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
       </DesktopContent>
-      <MobileLinkContainer fixed={fixed} isOpen={isOpen}>
+      <MobileLinkContainer fixed={fixed} isOpen={isOpen} right={right}>
         {renderLinks(links)}
       </MobileLinkContainer>
     </Navbar>
