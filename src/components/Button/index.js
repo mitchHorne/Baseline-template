@@ -6,6 +6,7 @@ export default styled.button`
       ? props.theme.colors.buttonDisabledBackground
       : props.theme.colors.buttonBackground};
   border: 0;
+  border-radius: 10px;
   color: ${props => props.theme.colors.button};
   padding: 0.5em;
 
