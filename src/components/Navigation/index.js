@@ -28,6 +28,8 @@ const MobileNavToggle = styled.button`
   font-size: 1.5em;
   position: absolute;
 
+  ${props => (props.right ? "right: 0;" : "")}
+
   :focus {
     outline: none;
   }
