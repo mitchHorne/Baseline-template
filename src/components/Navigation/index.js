@@ -77,7 +77,7 @@ const DesktopLinkContainer = styled(Container)`
 
 const MobileLinkContainer = styled(ColumnContainer)`
   background: ${props => props.theme.colors.primaryBackground};
-  height: calc(100vh - 45px);
+  height: auto;
   position: fixed;
   transition: 0.3s left;
   top: 45px;
@@ -125,7 +125,7 @@ export default ({ fixed }) => {
         <Logo src={logoSrc} />
         <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
       </DesktopContent>
-      <MobileLinkContainer isOpen={isOpen}>
+      <MobileLinkContainer fixed={fixed} isOpen={isOpen}>
         {renderLinks(links)}
       </MobileLinkContainer>
     </Navbar>
