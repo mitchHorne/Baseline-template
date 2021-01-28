@@ -13,10 +13,10 @@ const StyledForm = styled.form`
   padding: 1em;
   width: 80%;
 
-  ${props => props.theme.styling.formShadow}
-
   ${props => props.theme.media.desktop} {
     width: 50%;
+
+    ${props => props.theme.styling.formShadow}
   }
 
   ${props => props.theme.media.standard} {
@@ -26,11 +26,17 @@ const StyledForm = styled.form`
 `;
 
 const FormHeader = styled(Header)`
+  align-self: center;
   color: ${props => props.theme.colors.formAccent};
 `;
 
 const StyledButton = styled(Button)`
-  width: 20%;
+  align-self: center;
+  width: 80%;
+
+  ${props => props.theme.media.desktop} {
+    width: 20%;
+  }
 `;
 
 export default ({

@@ -8,7 +8,12 @@ import Error from "./Error";
 const StyledContainer = styled(Container)`
   align-items: flex-start;
   padding-bottom: 0.5em;
+  padding-left: 10%;
   width: fit-content;
+
+  ${props => props.theme.media.desktop} {
+    padding-left: 0;
+  }
 `;
 
 const renderOptions = (options, type) => {
