@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-import Container from "../Containers/Main";
+import Container from "../Containers/Column";
 import Header from "../Header/Sub";
 import Points from "./Points";
 
 const SectionContainer = styled(Container)`
-  align-items: center;
-  flex-direction: column;
   width: 100%;
 `;
 

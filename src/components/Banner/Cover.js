@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-import Container from "../Containers/Main";
+import Container from "../Containers/Column";
 import Link from "../Button/Link";
 
 const Cover = styled(Container)`
-  align-items: center;
   background-color: ${props => props.theme.colors.bannerBackground};
   color: ${props => props.theme.colors.banner};
-  flex-direction: column;
   font-size: 1.5em;
   height: 100vh;
   justify-content: center;
@@ -25,8 +23,7 @@ const Cover = styled(Container)`
   }
 `;
 
-const CoberButtonContainer = styled(Container)`
-  flex-direction: column;
+const CoverButtonContainer = styled(Container)`
   padding: 1em;
   padding-top: 2em;
   width: 100%;
@@ -61,9 +58,9 @@ export default ({ buttons, left, fill, text }) => (
   <Cover fill={fill} left={left}>
     {text}
     {buttons?.length && (
-      <CoberButtonContainer length={buttons.length}>
+      <CoverButtonContainer length={buttons.length}>
         {renderButtons(buttons)}
-      </CoberButtonContainer>
+      </CoverButtonContainer>
     )}
   </Cover>
 );

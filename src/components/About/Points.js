@@ -1,13 +1,11 @@
 import { Fragment } from "react";
 import styled from "styled-components";
 
-import Container from "../Containers/Main";
+import Container from "../Containers/Column";
 import SubHeader from "../Header/Minor";
 import Icon from "../Icon";
 
 const PointSection = styled(Container)`
-  align-items: center;
-  flex-direction: column;
   justify-content: center;
   width: 100vw;
 
@@ -24,8 +22,6 @@ const PointSection = styled(Container)`
 `;
 
 const Point = styled(Container)`
-  align-items: center;
-  flex-direction: column;
   max-width: 80%;
   padding: 1em;
 

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 import Container from "../Containers/Main";
+import ColumnContainer from "../Containers/Column";
 import Icon from "../Icon";
 import logoSrc from "../../constants/logo.png";
 
@@ -74,9 +75,8 @@ const DesktopLinkContainer = styled(Container)`
   }
 `;
 
-const MobileLinkContainer = styled(Container)`
+const MobileLinkContainer = styled(ColumnContainer)`
   background: ${props => props.theme.colors.primaryBackground};
-  flex-direction: column;
   height: calc(100vh - 45px);
   position: fixed;
   transition: 0.3s left;
