@@ -15,7 +15,7 @@ const Navbar = styled(Container)`
   width: 100%;
   z-index: 999;
 
-  ${props => props.theme.styling.boxShadow};
+  ${props => props.theme.styling.boxShadow}
 
   ${props => props.theme.media.tablet} {
     justify-content: center;

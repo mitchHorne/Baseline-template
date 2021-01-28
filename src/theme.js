@@ -12,10 +12,12 @@ export default {
     navBackground: "#fff",
     primary: "#333",
     primaryAccent: "#008080",
+    primaryAccentBackground: "#ddd",
     primaryBackground: "#eee",
   },
   styling: {
-    boxShadow: "box-shadow: 2px 2px 10px #333",
+    boxShadow: "box-shadow: 2px 2px 10px #333;",
+    iconShadow: "box-shadow: 2px 2px 5px #333;",
   },
   media: {
     tablet: "@media only screen and (min-width: 1024px)",
