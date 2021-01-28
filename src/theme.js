@@ -7,6 +7,7 @@ export default {
     button: "#fff",
     buttonBackground: "#3b5998 ",
     buttonDisabledBackground: "#999",
+    buttonBorder: "#3b5998",
     error: "#ff0033",
     form: "#333",
     formAccent: "#008080",

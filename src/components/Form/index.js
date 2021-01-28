@@ -25,6 +25,27 @@ const StyledForm = styled.form`
   }
 `;
 
+export const formContinuation = styled.div`
+  background-color: ${props => props.theme.colors.formBackground};
+  border-radius: 10px;
+  color: ${props => props.theme.colors.form};
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 80%;
+
+  ${props => props.theme.media.desktop} {
+    width: 50%;
+
+    ${props => props.theme.styling.formShadow}
+  }
+
+  ${props => props.theme.media.standard} {
+    align-items: center;
+    width: 30%;
+  }
+`;
+
 const FormHeader = styled(Header)`
   align-self: center;
   color: ${props => props.theme.colors.formAccent};
