@@ -111,9 +111,9 @@ export default ({ fixed }) => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
-    { anchor: "#", text: "Link 1" },
-    { anchor: "#", text: "Link 2" },
-    { anchor: "#", text: "Link 3" },
+    // { anchor: "#", text: "Link 1" },
+    // { anchor: "#", text: "Link 2" },
+    // { anchor: "#", text: "Link 3" },
   ];
 
   return (

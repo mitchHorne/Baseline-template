@@ -5,7 +5,7 @@ import Nav from "./components/Navigation";
 
 export default () => (
   <Router>
-    <Nav fixed />
+    <Nav />
     <Switch>
       <Route exact path="/" component={Home} />
     </Switch>
