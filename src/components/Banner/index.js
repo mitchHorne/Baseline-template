@@ -7,8 +7,12 @@ const BannerContainer = styled.div`
   background-image: url(${props => props.backgroundSrc});
   background-position: center;
   background-repeat: no-repeat;
-  height: ${props => (props.fill ? "100vh" : "65vh")};
+  height: 100vh;
   position: relative;
+
+  ${props => props.theme.media.tablet} {
+    height: ${props => (props.fill ? "100vh" : "65vh")};
+  }
 `;
 
 export default ({ fill, left, src, text }) => (
