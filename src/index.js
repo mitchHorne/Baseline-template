@@ -12,6 +12,18 @@ import reportWebVitals from "./reportWebVitals";
 
 import Routes from "./routes";
 
+// Define chunk method on array
+Object.defineProperty(Array.prototype, "chunk", {
+  value: function (chunkSize) {
+    var that = this;
+    return Array(Math.ceil(that.length / chunkSize))
+      .fill()
+      .map(function (_, i) {
+        return that.slice(i * chunkSize, i * chunkSize + chunkSize);
+      });
+  },
+});
+
 render(
   <StrictMode>
     <Provider store={store}>

@@ -3,5 +3,5 @@ import styled from "styled-components";
 import MainContainer from "./Main";
 
 export default styled(MainContainer)`
-  padding-top: 2em;
+  padding-top: 3em;
 `;
