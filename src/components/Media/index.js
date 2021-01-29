@@ -25,25 +25,9 @@ const MediaItemContainer = styled(Itemcontainer)`
   }
 `;
 
-const IconContainer = styled.div`
-  background-color: ${props => props.theme.colors.buttonBackground};
-  border-radius: 100%;
-  margin-bottom: 1em;
-  padding: 1em;
-
-  ${props => props.theme.styling.iconShadow}
-
-  i {
-    color: ${props => props.theme.colors.button};
-    font-size: 2em;
-  }
-`;
-
 const Item = ({ brand, icon, text }) => (
   <MediaItemContainer>
-    <IconContainer>
-      <Icon brand={brand} icon={icon} />
-    </IconContainer>
+    <Icon brand={brand} icon={icon} size="2" shadow />
     {text}
   </MediaItemContainer>
 );

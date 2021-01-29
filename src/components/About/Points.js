@@ -35,27 +35,10 @@ const Point = styled(Container)`
   }
 `;
 
-const PointIcon = styled.div`
-  background-color: ${props => props.theme.colors.primaryAccentBackground};
-  border-radius: 100%;
-  padding: 0.5em;
-
-  ${props => props.theme.styling.iconShadow}
-
-  i {
-    color: ${props => props.theme.colors.primaryAccent};
-    font-size: 2em;
-  }
-`;
-
 const renderPoints = (points, groupIndex) =>
   points.map(({ header, icon, text }, index) => (
     <Point key={`ABOUT_POINT_GROUP_#${groupIndex}_POINT_#${index}`}>
-      {icon && (
-        <PointIcon>
-          <Icon icon={icon} />
-        </PointIcon>
-      )}
+      {icon && <Icon iconSize="2" shadow icon={icon} />}
       {header && <SubHeader>{header}</SubHeader>}
       <p>{text}</p>
     </Point>

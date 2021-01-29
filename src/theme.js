@@ -12,6 +12,8 @@ export default {
     form: "#333",
     formAccent: "#008080",
     formBackground: "#eee",
+    icon: "#eee",
+    iconBackground: "#008080",
     nav: "#333",
     navAccent: "#008080",
     navBackground: "#fff",

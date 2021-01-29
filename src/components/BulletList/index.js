@@ -9,22 +9,10 @@ const ListContainer = styled(Container)`
   width: fit-content;
 `;
 
-const IconContainer = styled(ItemContainer)`
-  align-items: center;
-  padding-right: 0.5em;
-
-  i {
-    color: ${props => props.theme.colors.primaryAccent};
-    font-size: 0.75em;
-  }
-`;
-
 const renderListItems = (items, icon, listName) =>
   items.map((item, index) => (
     <ItemContainer key={`LIST_ITEM_${listName}_#${index}`}>
-      <IconContainer>
-        <Icon icon={icon}></Icon>
-      </IconContainer>
+      <Icon size="0.75" icon={icon}></Icon>
       {item}
     </ItemContainer>
   ));

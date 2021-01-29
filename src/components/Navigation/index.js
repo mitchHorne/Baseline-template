@@ -103,7 +103,7 @@ const Link = styled.a`
   text-decoration: none;
 
   :hover {
-    color: ${props => props.theme.colors.nav  Accent};
+    color: ${props => props.theme.colors.navAccent};
   }
 `;
 
@@ -126,11 +126,11 @@ export default ({ center, fixed, right }) => {
   return (
     <Navbar fixed={fixed}>
       <MobileNavToggle onClick={() => setOpen(!isOpen)} right={right}>
-        <Icon icon={isOpen ? "times" : "bars"} />
+        <Icon icon={isOpen ? "times" : "bars"} noBackground />
       </MobileNavToggle>
       <DesktopContent center={center}>
         <a href="/">
-        <Logo src={logoSrc} />
+          <Logo src={logoSrc} />
         </a>
         <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
       </DesktopContent>
