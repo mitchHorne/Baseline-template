@@ -114,7 +114,7 @@ const renderLinks = links =>
     </Link>
   ));
 
-export default ({ fixed, right }) => {
+export default ({ center, fixed, right }) => {
   const [isOpen, setOpen] = useState(false);
 
   const links = [
@@ -128,7 +128,7 @@ export default ({ fixed, right }) => {
       <MobileNavToggle onClick={() => setOpen(!isOpen)} right={right}>
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
-      <DesktopContent>
+      <DesktopContent center={center}>
         <Logo src={logoSrc} />
         <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
       </DesktopContent>
