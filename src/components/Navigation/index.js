@@ -76,7 +76,7 @@ const DesktopLinkContainer = styled(Container)`
 `;
 
 const MobileLinkContainer = styled(ColumnContainer)`
-  background: ${props => props.theme.colors.primaryBackground};
+  background: ${props => props.theme.colors.navBackground};
   height: auto;
   position: fixed;
   transition: 0.3s all;
@@ -103,7 +103,7 @@ const Link = styled.a`
   text-decoration: none;
 
   :hover {
-    color: ${props => props.theme.colors.primaryAccent};
+    color: ${props => props.theme.colors.nav  Accent};
   }
 `;
 
@@ -129,7 +129,9 @@ export default ({ center, fixed, right }) => {
         <Icon icon={isOpen ? "times" : "bars"} />
       </MobileNavToggle>
       <DesktopContent center={center}>
+        <a href="/">
         <Logo src={logoSrc} />
+        </a>
         <DesktopLinkContainer>{renderLinks(links)}</DesktopLinkContainer>
       </DesktopContent>
       <MobileLinkContainer fixed={fixed} isOpen={isOpen} right={right}>

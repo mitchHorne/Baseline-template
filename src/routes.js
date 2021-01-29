@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Home from "./containers/home";
 import Nav from "./components/Navigation";
+import Home from "./containers/home";
 
 export default () => (
   <Router>

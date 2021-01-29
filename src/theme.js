@@ -13,6 +13,7 @@ export default {
     formAccent: "#008080",
     formBackground: "#eee",
     nav: "#333",
+    navAccent: "#008080",
     navBackground: "#fff",
     primary: "#333",
     primaryAccent: "#008080",
