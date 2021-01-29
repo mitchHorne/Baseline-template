@@ -9,6 +9,7 @@ const BannerContainer = styled.div`
   background-repeat: no-repeat;
   height: 100vh;
   position: relative;
+  width: 100vw;
 
   ${props => props.theme.media.tablet} {
     height: ${props => (props.fill ? "100vh" : "65vh")};
