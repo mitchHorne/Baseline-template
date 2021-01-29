@@ -4,24 +4,29 @@ import { Form } from "react-final-form";
 import Header from "../Header/Sub";
 import Button from "../Button";
 
+export const formTypeForm = "FORMTYPE/FORM";
+export const formTypePage = "FORMTYPE/PAGE";
+export const formTypeSection = "FORMTYPE/SECTION";
+
 const StyledForm = styled.form`
   background-color: ${props => props.theme.colors.formBackground};
-  border-radius: 10px;
+  border-radius: ${props => (props.formType === formTypeForm ? "10px" : "0")};
   color: ${props => props.theme.colors.form};
   display: flex;
   flex-direction: column;
+  margin-bottom: 2em;
   padding: 1em;
-  width: 80%;
+  width: 100vw;
 
   ${props => props.theme.media.desktop} {
-    width: 50%;
-
-    ${props => props.theme.styling.formShadow}
+    width: ${props => (props.formType === formTypeSection ? "100vw" : "50vw")};
+    ${props =>
+      props.formType === formTypeForm ? props.theme.styling.formShadow : null}
   }
 
   ${props => props.theme.media.standard} {
     align-items: center;
-    width: 30%;
+    width: ${props => (props.formType === formTypeSection ? "100vw" : "30vw")};
   }
 `;
 
@@ -51,17 +56,19 @@ const FormHeader = styled(Header)`
   color: ${props => props.theme.colors.formAccent};
 `;
 
-const StyledButton = styled(Button)`
+const SubmitButton = styled(Button)`
   align-self: center;
+  margin-top: 1em;
   width: 80%;
 
   ${props => props.theme.media.desktop} {
-    width: 20%;
+    width: ${props => (props.formType === formTypeSection ? "10%" : "20%")};
   }
 `;
 
 export default ({
   FormComponents,
+  formType = formTypeForm,
   header,
   initialValues = {},
   onSubmit,
@@ -72,12 +79,15 @@ export default ({
     onSubmit={onSubmit}
     validate={validate}
     render={({ errors, handleSubmit, pristine, submitting, touched }) => (
-      <StyledForm onSubmit={handleSubmit}>
+      <StyledForm formType={formType} onSubmit={handleSubmit}>
         {header && <FormHeader>{header}</FormHeader>}
         <FormComponents errors={errors} touched={touched} />
-        <StyledButton disabled={pristine || submitting} type="submit">
+        <SubmitButton
+          disabled={pristine || submitting}
+          formType={formType}
+          type="submit">
           Submit
-        </StyledButton>
+        </SubmitButton>
       </StyledForm>
     )}
   />
