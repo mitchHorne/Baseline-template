@@ -8,8 +8,9 @@ const IconContainer = styled.div`
       ? props.theme.colors.icon
       : props.theme.colors.iconBackground};
   border-radius: 100%;
-  padding: 1em;
+  padding: ${props => (props.listIcon ? "0" : "1em")};
 
+  ${props => (props.listIcon ? "padding-right: 0.5em" : null)};
   ${props => (props.shadow ? props.theme.styling.iconShadow : null)}
 
   i {
@@ -25,12 +26,14 @@ export default ({
   brand,
   icon,
   iconSize = "1",
+  listIcon,
   noBackground,
   reverse,
   shadow,
 }) => (
   <IconContainer
     iconSize={iconSize}
+    listIcon={listIcon}
     noBackground={noBackground}
     reverse={reverse}
     shadow={shadow}>

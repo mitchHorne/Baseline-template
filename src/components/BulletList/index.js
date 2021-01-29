@@ -12,7 +12,7 @@ const ListContainer = styled(Container)`
 const renderListItems = (items, icon, listName) =>
   items.map((item, index) => (
     <ItemContainer key={`LIST_ITEM_${listName}_#${index}`}>
-      <Icon size="0.75" icon={icon}></Icon>
+      <Icon icon={icon} listIcon noBackground size="0.75" reverse />
       {item}
     </ItemContainer>
   ));
