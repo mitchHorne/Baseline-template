@@ -3,7 +3,7 @@ export default {
     banner: "#fff",
     bannerBackground: "#222c",
     bannerAccent: "#fff",
-    bannerAccentackground: "#3b5998 ",
+    bannerAccentBackground: "#3b5998 ",
     button: "#fff",
     buttonBackground: "#3b5998 ",
     buttonDisabledBackground: "#999",
