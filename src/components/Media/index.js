@@ -11,7 +11,7 @@ const MediaContainer = styled(Container)`
   width: 100%;
 
   ${props => props.theme.media.desktop} {
-    flex-direction: inherit;
+    flex-direction: row;
     justify-content: center;
     padding: 4em 0;
   }

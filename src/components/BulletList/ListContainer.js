@@ -6,7 +6,7 @@ export default styled(Container)`
   flex-direction: column;
 
   ${props => props.theme.media.tablet} {
-    flex-direction: inherit;
+    flex-direction: row;
     justify-content: space-around;
     width: 100%;
   }

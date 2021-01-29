@@ -4,7 +4,7 @@ import Container from "../Containers/Main";
 import ContentContainer from "../Containers/Column";
 
 const SplitContainer = styled(Container)`
-  flex-direction: ${props => (props.reverse ? "row-reverse" : "inherit")};
+  flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
 `;
 
 const Content = styled(ContentContainer)`
